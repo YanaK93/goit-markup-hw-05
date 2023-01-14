@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebStudio</title>
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +28,7 @@
         >
         <ul class="header-list">
           <li class="header-item">
-            <a class="header-link link" href="./index.html">Studio</a>
+            <a class="header-link link current" href="./index.html">Studio</a>
           </li>
           <li class="header-item">
             <a class="header-link link" href="./portfolio.html">Portfolio</a>
@@ -49,10 +54,12 @@
       <section class="sub-header">
         <div class="container">
         <h1 class="sub-header-text">Effective Solutions for Your Business</h1>
-        <button type="button" class="btn btn-service">
-          Order Service
-        </button>
-      </div>
+        <div>
+          <button type="button" class="modal-btn" data-modal-open>
+            Order Service
+          </button>
+        </div>
+     
       </section>
       <section class="section-wrapper">
         <div class="container">
@@ -411,5 +418,16 @@
     </div>
   </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close-button" data-modal-close>
+          <svg class="modal-close-btn-icon" width="8" height="8">
+            <use href="./img/icons.svg#icon-escape"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+</div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
