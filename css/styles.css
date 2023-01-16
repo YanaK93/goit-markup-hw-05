@@ -35,23 +35,6 @@ body {
 }
 
 
-.current {
-  position: relative;
-}
-
-
-.current::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  bottom: 0;
-  left: 0;
-  background: var(--header-color);
-  border-radius: 2px;
-}
-
-
 
 .header {
   padding-top: 24px;
@@ -149,8 +132,11 @@ align-items: center;
   letter-spacing: 0.02em;
   color: var(--subheader-color);
   text-decoration: none;
-  
+  position: relative;
+  transition-property: color;
+  transition: transform 250ms linear
 }
+  
 
 .header-mail {
   font-size: 16px;
@@ -196,7 +182,8 @@ align-items: center;
   cursor: pointer;
   border-radius: 4px;
   display: flex;
-  transition: background-color var(--transition), box-shadow var(--transition), color var(--transition);
+  border-radius: 4px;
+  transition: background-color var(--transition), box-shadow var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .btn-portfolio:hover,
@@ -205,7 +192,7 @@ align-items: center;
   color: var(--first-title-color);
   border-color: transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+ 
 }
 
 .what-we-are-doing-title {
@@ -249,13 +236,19 @@ align-items: center;
 .link {
   text-decoration: none;
   color: var(--text-color);
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--text-color);
   transition: color var(--transition);
 }
 
-.link:hover,
-.link:focus {
+.contact-link:hover,
+.contact-link:focus {
     color: var(--hover-color)
 }
+
 
 
 .header-link:hover,
@@ -502,31 +495,31 @@ img {
 }
 
 .customers-link {
-  width: 100%;
-  height: 100%;
+  width: 168px;
+  height: 88px;
+  padding: 16px 32px;
+  fill: #afb1b8;
+  border: 1px solid #8e8f99;
   border-radius: 4px;
-display: flex;
-align-items: center;
-justify-content: center;
-fill: #8E8F99;
-border: 1px solid #8E8F99;
-border-radius: 4px;
-transition: fill var(--transition), border var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: fill var(--transition), border var(--transition);
 }
+
+
+.customers-link:hover,
+.customers-link:focus {
+  fill: var(--hover-color);
+  border: 1px solid var(--hover-color);
+  border-radius: 4px;
+}
+
 
 .customers-icon {
-  fill: #8E8F99;
+  
 }
 
-.customers-link :hover,
-.customers-link :focus {
-  border-color: #404BBF;
-}
-
-.customers-link:hover .customers-icon,
-.customers-link:focus .customers-icon {
-  fill: #404BBF;
-}
 
 .footer-index {
   top: 2283px;
@@ -644,6 +637,7 @@ footer {
   color: var(--first-title-color);
   text-decoration: none;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  transition: transform 250ms linear;
 }
 
 .team-list-link-wrapper:hover {
@@ -733,6 +727,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
   background: #e7e9fc;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .modal-close-button:active {
@@ -754,15 +749,51 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-width: 0px;
-  transition: background-color var(--transition), box-shadow var(--transition), color var(--transition);
+  transition: background-color var(--transition);
+  cursor: pointer;
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
-  color: #ffffff;
-  background: #404bbf;
+
+  background-color: #404bbf;
 }
 
 .modal-btn:active {
   background-color: #404bbf;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  fill: #FFFFFF;
+  background-color:  #404BBF;
+}
+
+.current {
+  color: var(--hover-color);
+}
+
+.current:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--hover-color);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.header-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  opacity: 1;
 }
