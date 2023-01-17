@@ -134,7 +134,7 @@ align-items: center;
   text-decoration: none;
   position: relative;
   transition-property: color;
-  transition: transform 250ms linear
+  transition: color var(--transition);
 }
   
 
@@ -495,10 +495,8 @@ img {
 }
 
 .customers-link {
-  width: 168px;
-  height: 88px;
   padding: 16px 32px;
-  fill: #afb1b8;
+  fill: #8e8f99;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   display: flex;
@@ -637,7 +635,7 @@ footer {
   color: var(--first-title-color);
   text-decoration: none;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-  transition: transform 250ms linear;
+  transition: box-shadow var(--transition);
 }
 
 .team-list-link-wrapper:hover {
@@ -749,7 +747,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-width: 0px;
-  transition: background-color var(--transition);
+  transition: background-color var(--transition), fill var(--transition);
   cursor: pointer;
 }
 
